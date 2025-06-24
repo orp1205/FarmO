@@ -56,7 +56,7 @@ Here are the key features currently being developed or improved in **FarmLife**:
   Plant seeds, water crops, and harvest them when they’re fully grown.
 
 - 🛒 **Buying & Selling System**  
-  Visit the town market to purchase seeds, tools, and upgrades. Sell your produce and items for coins. Prices vary by season and market demand.
+  Visit the town market to purchase seeds and hire worker. Sell your produce and items for coins. Prices vary by season and market demand.
 
 - 🌱 **Customize Farm Layout**  
   Customize the layout of your farm. Place buildings freely.
