@@ -53,7 +53,7 @@
 Here are the key features currently being developed or improved in **FarmLife**:
 
 - 🌾 **Farming & Harvesting Mechanics**  
-  Plant seeds, water crops, and harvest them when they’re fully grown. Crop growth is affected by weather, season, and soil quality.
+  Plant seeds, water crops, and harvest them when they’re fully grown.
 
 - 🛒 **Buying & Selling System**  
   Visit the town market to purchase seeds, tools, and upgrades. Sell your produce and items for coins. Prices vary by season and market demand.
