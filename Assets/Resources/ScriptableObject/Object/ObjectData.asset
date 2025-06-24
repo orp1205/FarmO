@@ -16,12 +16,21 @@ MonoBehaviour:
   - <Name>k__BackingField: WalkPlace
     <ID>k__BackingField: 0
     <Size>k__BackingField: {x: 1, y: 1}
+    <Type>k__BackingField: 0
     <Prefab>k__BackingField: {fileID: 0}
+    <Icon>k__BackingField: {fileID: 0}
+    <Price>k__BackingField: 0
   - <Name>k__BackingField: Field
     <ID>k__BackingField: 1
     <Size>k__BackingField: {x: 1, y: 1}
+    <Type>k__BackingField: 1
     <Prefab>k__BackingField: {fileID: 8660840194128053749, guid: 88ad563026e3b9740905d294b6a0c112, type: 3}
+    <Icon>k__BackingField: {fileID: 21300000, guid: dbd782c81cac9f44ba1f809ded8c8ee5, type: 3}
+    <Price>k__BackingField: 100
   - <Name>k__BackingField: Barn
     <ID>k__BackingField: 2
     <Size>k__BackingField: {x: 2, y: 2}
+    <Type>k__BackingField: 2
     <Prefab>k__BackingField: {fileID: 1273372433373025718, guid: 732e3f4833bc07e4f95d6581690e2d7a, type: 3}
+    <Icon>k__BackingField: {fileID: 21300000, guid: d03ae1fb4824ab8478e16ecf39697fb4, type: 3}
+    <Price>k__BackingField: 200

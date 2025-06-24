@@ -44,11 +44,11 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Thickness: 0.0254
+    - _Thickness: 0.1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _ScaleDefault: {r: 10, g: 10, b: 0, a: 0}
-    - _Size: {r: 4, g: 4, b: 0, a: 0}
+    - _Size: {r: 2, g: 2, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &8497126705705805613

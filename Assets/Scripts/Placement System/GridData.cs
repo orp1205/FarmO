@@ -6,10 +6,10 @@ public class GridData
 {
     Dictionary<Vector2Int, PlacementData> placedObjects = new ();
     
-    public void AddObjectAt(Vector2Int gridPosition, Vector2Int objectSize, int ID, int placedObjectIndex)
+    public void AddObjectAt(Vector2Int gridPosition, Vector2Int objectSize, int ID, int placedObjectIndex, string uniqueID)
     {
         List<Vector2Int> occupiedPositions = CalculatePositions(gridPosition, objectSize);
-        PlacementData data = new PlacementData(ID, placedObjectIndex, occupiedPositions);
+        PlacementData data = new PlacementData(ID, placedObjectIndex, occupiedPositions, uniqueID);
         foreach (var position in occupiedPositions)
         {
             if (!placedObjects.ContainsKey(position))
@@ -83,11 +83,14 @@ public class PlacementData
     public List<Vector2Int> occupiedPositions;
     public int ID { get; private set; }
     public int PlacedObjectID { get; private set; }
-    public PlacementData(int id, int placedObjectId, List<Vector2Int> occupiedPositions)
+
+    public string UniqueID { get; private set; }
+    public PlacementData(int id, int placedObjectId, List<Vector2Int> occupiedPositions, string uniqueID)
     {
         ID = id;
         PlacedObjectID = placedObjectId;
         this.occupiedPositions = occupiedPositions;
+        this.UniqueID = uniqueID;
     }
     // Parameterless constructor for deserialization
     public PlacementData() { }

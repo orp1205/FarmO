@@ -27,6 +27,9 @@ public class PlacementSystem : MonoBehaviour
     private ObjectPlacer objectPlacer; // Reference to the object placer to keep track of placed objects
 
     IBuildingState buildingState;
+
+    [SerializeField]
+    private DefaultPlacementData defaultPlacementData;
     private void Start()
     {
         StopPlacement();
@@ -44,6 +47,7 @@ public class PlacementSystem : MonoBehaviour
                                            objectsDatabase,
                                            floorData,
                                            objectData,
+                                           gridVisualization,
                                            objectPlacer); // Initialize the building state
         inputManager.Onclicked += PlaceStructure;
         inputManager.OnExit += StopPlacement;
@@ -114,7 +118,8 @@ public class PlacementSystem : MonoBehaviour
             {
                 position = data.occupiedPositions[0],
                 objectID = data.ID,
-                prefabIndex = data.PlacedObjectID
+                prefabIndex = data.PlacedObjectID,
+                uniqueID = data.UniqueID
             });
         }
 
@@ -124,7 +129,8 @@ public class PlacementSystem : MonoBehaviour
             {
                 position = data.occupiedPositions[0],
                 objectID = data.ID,
-                prefabIndex = data.PlacedObjectID
+                prefabIndex = data.PlacedObjectID,
+                uniqueID = data.UniqueID
             });
         }
 
@@ -134,23 +140,41 @@ public class PlacementSystem : MonoBehaviour
     }
     public void LoadAllObjects()
     {
-        if (!PlayerPrefs.HasKey("SavedObjects")) return;
-
-        string json = PlayerPrefs.GetString("SavedObjects");
-        var wrapper = JsonUtility.FromJson<Wrapper<SavedPlacementData>>(json);
-
-        foreach (var item in wrapper.list)
+        if (PlayerPrefs.HasKey("SavedObjects"))
         {
-            var objData = objectsDatabase.objectsData.Find(x => x.ID == item.objectID);
-            if (objData == null) continue;
+            string json = PlayerPrefs.GetString("SavedObjects");
+            var wrapper = JsonUtility.FromJson<Wrapper<SavedPlacementData>>(json);
 
-            Vector3 worldPos = grid.CellToWorld(new Vector3Int(item.position.x, item.position.y, 0));
-            int index = objectPlacer.PlaceObject(objData.Prefab, worldPos);
+            foreach (var item in wrapper.list)
+            {
+                var objData = objectsDatabase.objectsData.Find(x => x.ID == item.objectID);
+                if (objData == null) continue;
 
-            GridData selectedData = item.objectID == 0 ? floorData : objectData;
-            selectedData.AddObjectAt(item.position, objData.Size, item.objectID, index);
+                Vector3 worldPos = grid.CellToWorld(new Vector3Int(item.position.x, item.position.y, 0));
+                int index = objectPlacer.PlaceObject(objData.Prefab, worldPos, item.uniqueID, objData.Type);
+
+                GridData selectedData = item.objectID == 0 ? floorData : objectData;
+                selectedData.AddObjectAt(item.position, objData.Size, item.objectID, index, item.uniqueID);
+            }
+        }
+        else
+        {
+            foreach (var item in defaultPlacementData.defaultPlacements)
+            {
+                var objData = objectsDatabase.objectsData.Find(x => x.ID == item.objectID);
+                if (objData == null) continue;
+
+                Vector3 worldPos = grid.CellToWorld(new Vector3Int(item.gridPosition.x, item.gridPosition.y, 0));
+                string uid = Guid.NewGuid().ToString();
+                int index = objectPlacer.PlaceObject(objData.Prefab, worldPos, uid, objData.Type);
+
+                GridData selectedData = item.objectID == 0 ? floorData : objectData;
+                selectedData.AddObjectAt(item.gridPosition, objData.Size, item.objectID, index, uid);
+            }
+            SaveAllObjects();
         }
     }
+
     [System.Serializable]
     public class Wrapper<T>
     {
@@ -164,4 +188,5 @@ public class SavedPlacementData
     public Vector2Int position;
     public int objectID;
     public int prefabIndex;
+    public string uniqueID;
 }

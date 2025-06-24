@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 446f9cb0b3cef33469f5686ae1b851e3, type: 3}
+  m_Name: FarmingObjectData
+  m_EditorClassIdentifier: 
+  farmingObjects:
+  - <ID>k__BackingField: 0
+    <Name>k__BackingField: Tomato
+    <TypeOfFarming>k__BackingField: 1
+    <StarterUnitIcon>k__BackingField: {fileID: 689240637109407769, guid: 5ff63280d1636d64c93b2d99606f43f3, type: 3}
+    <ProductIcon>k__BackingField: {fileID: 21300000, guid: 62477d1d8c30c1e42aacb0a04e7b1ce9, type: 3}
+    <FeedIcon>k__BackingField: {fileID: -7414479409831137585, guid: 60d03781c40e92a469987ad73d43da8d, type: 3}
+    <MaxLevel>k__BackingField: 4
+    <MaxProduction>k__BackingField: 40
+    <ProductionPerInterval>k__BackingField: 1
+    <ProductionIntervalMinutes>k__BackingField: 10
+    <DecayTimeAfterFullProduction>k__BackingField: 60
+    <PurchaseCost>k__BackingField: 30
+    <UnitsPerPurchase>k__BackingField: 1
+    <SellPricePerUnit>k__BackingField: 5
+    <LevelPrefabs>k__BackingField:
+    - {fileID: 6170977325409250111, guid: 6a99c419f29b5dc428173a364ed8db9b, type: 3}
+    - {fileID: 271152636127211301, guid: bf9cd01bd0c301e46962747a97be9425, type: 3}
+    - {fileID: 440511652722209513, guid: 0b3b0b51e18257943b953f81ef3285a8, type: 3}
+    - {fileID: 6897142596480657458, guid: cd794cacc1615a242a9b9d32b7620ee1, type: 3}
+  - <ID>k__BackingField: 1
+    <Name>k__BackingField: Cow
+    <TypeOfFarming>k__BackingField: 2
+    <StarterUnitIcon>k__BackingField: {fileID: 7576617242518483205, guid: 62d5f70c6369d1c4f85e45156bd046d2, type: 3}
+    <ProductIcon>k__BackingField: {fileID: 7439616397566622534, guid: 60d03781c40e92a469987ad73d43da8d, type: 3}
+    <FeedIcon>k__BackingField: {fileID: -636022080593118722, guid: 60d03781c40e92a469987ad73d43da8d, type: 3}
+    <MaxLevel>k__BackingField: 2
+    <MaxProduction>k__BackingField: 100
+    <ProductionPerInterval>k__BackingField: 1
+    <ProductionIntervalMinutes>k__BackingField: 30
+    <DecayTimeAfterFullProduction>k__BackingField: 60
+    <PurchaseCost>k__BackingField: 100
+    <UnitsPerPurchase>k__BackingField: 1
+    <SellPricePerUnit>k__BackingField: 15
+    <LevelPrefabs>k__BackingField:
+    - {fileID: 285424586470963537, guid: 69a24362e2a50ec4cb8b5d4c938b2661, type: 3}
+    - {fileID: 902212196183581373, guid: 766c9fb1064b1a648a6da00425d67462, type: 3}
+  - <ID>k__BackingField: 2
+    <Name>k__BackingField: Pumpkin
+    <TypeOfFarming>k__BackingField: 1
+    <StarterUnitIcon>k__BackingField: {fileID: 5214640707927695005, guid: 5ff63280d1636d64c93b2d99606f43f3, type: 3}
+    <ProductIcon>k__BackingField: {fileID: -8963360674610236421, guid: 5ff63280d1636d64c93b2d99606f43f3, type: 3}
+    <FeedIcon>k__BackingField: {fileID: -7414479409831137585, guid: 60d03781c40e92a469987ad73d43da8d, type: 3}
+    <MaxLevel>k__BackingField: 4
+    <MaxProduction>k__BackingField: 40
+    <ProductionPerInterval>k__BackingField: 1
+    <ProductionIntervalMinutes>k__BackingField: 15
+    <DecayTimeAfterFullProduction>k__BackingField: 60
+    <PurchaseCost>k__BackingField: 50
+    <UnitsPerPurchase>k__BackingField: 1
+    <SellPricePerUnit>k__BackingField: 8
+    <LevelPrefabs>k__BackingField:
+    - {fileID: 2408757049114282983, guid: 9e1b545a5a78c9c49aa0ad924efc17bb, type: 3}
+    - {fileID: 6725556443763273516, guid: b75d06d2861abb043ae2be8458f8172d, type: 3}
+    - {fileID: 3543502686919637355, guid: 27cab966715a13b4d96ce612969bc317, type: 3}
+    - {fileID: 3308331939765194784, guid: cb066540543fe514d98f48ce2964b16e, type: 3}
+  - <ID>k__BackingField: 3
+    <Name>k__BackingField: Been
+    <TypeOfFarming>k__BackingField: 1
+    <StarterUnitIcon>k__BackingField: {fileID: -1052589382, guid: 5ff63280d1636d64c93b2d99606f43f3, type: 3}
+    <ProductIcon>k__BackingField: {fileID: 1017451736604274071, guid: 3f243b4071bafc542991eb2ec66e91e9, type: 3}
+    <FeedIcon>k__BackingField: {fileID: -7414479409831137585, guid: 60d03781c40e92a469987ad73d43da8d, type: 3}
+    <MaxLevel>k__BackingField: 4
+    <MaxProduction>k__BackingField: 20
+    <ProductionPerInterval>k__BackingField: 1
+    <ProductionIntervalMinutes>k__BackingField: 5
+    <DecayTimeAfterFullProduction>k__BackingField: 60
+    <PurchaseCost>k__BackingField: 400
+    <UnitsPerPurchase>k__BackingField: 10
+    <SellPricePerUnit>k__BackingField: 10
+    <LevelPrefabs>k__BackingField:
+    - {fileID: 1457207876582607289, guid: 88cc2e659298e4c459645757cc1f91d4, type: 3}
+    - {fileID: 1812608780646207179, guid: 0afb1fc0badcb9e4eadce93c7dc29546, type: 3}
+    - {fileID: 430748621399288732, guid: 07fe16ee1dbd4c84fbbcc48b2d4e920f, type: 3}
+    - {fileID: 5643867454356488977, guid: fc7df2218301c164e963ec7e04634f10, type: 3}
