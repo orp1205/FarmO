@@ -60,7 +60,6 @@ public class ItemUI : MonoBehaviour, ShopItem
     }
     public void UpdateItemStateBuyWorker(bool canBuy)
     {
-        ItemUIVisual.gameObject.SetActive(canBuy); // Ensure the item UI is active when updating state
         ItemUIVisual.UpdateItemState(canBuy);
     }
     public void OnClickItem(Action OnclickAction)

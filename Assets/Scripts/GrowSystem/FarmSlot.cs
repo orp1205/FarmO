@@ -270,6 +270,7 @@ public class FarmSlot : MonoBehaviour
         if (PlayerPrefs.HasKey($"{slotUID}_FarmingObjectID"))
         {
             int farmingObjectID = PlayerPrefs.GetInt($"{slotUID}_FarmingObjectID");
+            Debug.Log($"Loading Farming Object ID: {farmingObjectID} for slot {slotUID}");
             FarmingObjectData farmingObjectData = Resources.Load<FarmingObjectData>("ScriptableObject/Farming/FarmingObjectData"); // Load the FarmingObjectData from Resources
             farmingObject = farmingObjectData.farmingObjects.Find(obj => obj.ID == farmingObjectID); // Find the farming object by ID
             if (farmingObject != null)

@@ -52,6 +52,10 @@ public class PlayerInventoryManager : MonoBehaviour
         {
             WinningScreen.SetActive(false); // Hide winning screen if the player hasn't won yet
         }
+        else
+        {
+            PlayerPrefs.DeleteAll(); // Clear PlayerPrefs to reset the game
+        }
     }
 
     #region Money
@@ -74,6 +78,7 @@ public class PlayerInventoryManager : MonoBehaviour
         if(money >= defaultData.WinningGoldAmount)
         {
             WinningScreen.SetActive(true); // Show winning screen if the player has enough money
+            PlayerPrefs.DeleteAll(); // Clear PlayerPrefs to reset the game
         }
         UpdateMoney();
         SaveInventory();
@@ -138,7 +143,7 @@ public class PlayerInventoryManager : MonoBehaviour
     }
     public bool HasProduction(int farmingObjectID)
     {
-        return products.ContainsKey(farmingObjectID);
+        return GetProductCount(farmingObjectID)>0;
     }
     public void AddProduct(int farmingObjectID, int amount)
     {
